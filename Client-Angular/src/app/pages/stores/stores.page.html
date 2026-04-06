@@ -1,0 +1,15 @@
+@switch(state){
+
+    @case('loading'){
+        <app-alert alertState="loading" text="Cargando Tiendas..." ></app-alert>
+    }
+
+    @case('error'){
+        <app-alert alertState="error" text="Error al Cargar las Tiendas" ></app-alert>
+    }
+
+    @case('success'){
+        <app-stores-table [stores]="stores" ></app-stores-table>
+    }
+
+}

@@ -1,0 +1,18 @@
+<table class="table table-striped border">
+	<thead>
+		<tr>
+			<th scope="col">Id</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Descripción</th>
+		</tr>
+	</thead>
+	<tbody>
+		@for (category of categories; track category) {
+			<tr>
+				<th scope="row">{{ category.id }}</th>
+				<td>{{ category.name }}</td>
+				<td>{{ category.description }}</td>
+			</tr>
+		}
+	</tbody>
+</table>
