@@ -1,12 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { OrdersService } from './orders.service';
-import { environment } from '../../../environments/environment';
 
 describe('OrdersService', () => {
   let service: OrdersService;
   let httpMock: HttpTestingController;
-  const baseUrl = `${environment.baseUrl}/orders`;
+  const baseUrl = `api/orders`;
 
   beforeEach(() => {
     TestBed.configureTestingModule({

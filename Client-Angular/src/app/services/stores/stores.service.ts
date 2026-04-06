@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '../../interfaces/stores.interface';
-import { environment } from '../../../environments/environment';
 
 /**
  * Servicio encargado de la gestión de tiendas.
@@ -21,7 +20,7 @@ export class StoresService {
    * @returns Observable que emite un array de tiendas.
    */
   public getAllStores(): Observable<Store[]> {
-    return this.httpClient.get<Store[]>(`${environment.baseUrl}/stores`);
+    return this.httpClient.get<Store[]>(`api/stores`);
   }
 
   /**
@@ -30,7 +29,7 @@ export class StoresService {
    * @returns Observable que emite una tienda.
    */
   public getStoreById(id: string): Observable<Store> {
-    return this.httpClient.get<Store>(`${environment.baseUrl}/stores/${id}`);
+    return this.httpClient.get<Store>(`api/stores/${id}`);
   }
 
   /**
@@ -39,7 +38,7 @@ export class StoresService {
    * @returns Observable que emite la tienda creada.
    */
   public createStore(data: Partial<Store>): Observable<Store> {
-    return this.httpClient.post<Store>(`${environment.baseUrl}/stores`, data);
+    return this.httpClient.post<Store>(`api/stores`, data);
   }
 
   /**
@@ -49,7 +48,7 @@ export class StoresService {
    * @returns Observable que emite la tienda actualizada.
    */
   public updateStore(id: string, data: Partial<Store>): Observable<Store> {
-    return this.httpClient.put<Store>(`${environment.baseUrl}/stores/${id}`, data);
+    return this.httpClient.put<Store>(`api/stores/${id}`, data);
   }
 
   /**
@@ -58,6 +57,6 @@ export class StoresService {
    * @returns Observable que avisa la eliminación.
    */
   public deleteStore(id: string): Observable<void> {
-    return this.httpClient.delete<void>(`${environment.baseUrl}/stores/${id}`);
+    return this.httpClient.delete<void>(`api/stores/${id}`);
   }
 }

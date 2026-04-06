@@ -1,12 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { CategoriesService } from './categories.service';
-import { environment } from '../../../environments/environment';
 
 describe('CategoriesService', () => {
   let service: CategoriesService;
   let httpMock: HttpTestingController;
-  const baseUrl = `${environment.baseUrl}/categories`;
+  const baseUrl = `api/categories`;
 
   beforeEach(() => {
     TestBed.configureTestingModule({

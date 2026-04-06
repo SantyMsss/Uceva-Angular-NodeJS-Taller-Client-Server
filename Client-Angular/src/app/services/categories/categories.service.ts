@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Category } from '../../interfaces/categories.interface';
-import { environment } from '../../../environments/environment';
 
 /**
  * Servicio encargado de la gestión de categorías.
@@ -21,7 +20,7 @@ export class CategoriesService {
    * @returns Observable que emite un array de categorías.
    */
   public getAllCategories(): Observable<Category[]> {
-    return this.httpClient.get<Category[]>(`${environment.baseUrl}/categories`);
+    return this.httpClient.get<Category[]>(`api/categories`);
   }
 
   /**
@@ -30,7 +29,7 @@ export class CategoriesService {
    * @returns Observable que emite una categoría.
    */
   public getCategoryById(id: string): Observable<Category> {
-    return this.httpClient.get<Category>(`${environment.baseUrl}/categories/${id}`);
+    return this.httpClient.get<Category>(`api/categories/${id}`);
   }
 
   /**
@@ -39,7 +38,7 @@ export class CategoriesService {
    * @returns Observable que emite la categoría creada.
    */
   public createCategory(data: Partial<Category>): Observable<Category> {
-    return this.httpClient.post<Category>(`${environment.baseUrl}/categories`, data);
+    return this.httpClient.post<Category>(`api/categories`, data);
   }
 
   /**
@@ -49,7 +48,7 @@ export class CategoriesService {
    * @returns Observable que emite la categoría actualizada.
    */
   public updateCategory(id: string, data: Partial<Category>): Observable<Category> {
-    return this.httpClient.put<Category>(`${environment.baseUrl}/categories/${id}`, data);
+    return this.httpClient.put<Category>(`api/categories/${id}`, data);
   }
 
   /**
@@ -58,6 +57,6 @@ export class CategoriesService {
    * @returns Observable que avisa la eliminación.
    */
   public deleteCategory(id: string): Observable<void> {
-    return this.httpClient.delete<void>(`${environment.baseUrl}/categories/${id}`);
+    return this.httpClient.delete<void>(`api/categories/${id}`);
   }
 }
