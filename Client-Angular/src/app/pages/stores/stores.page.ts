@@ -16,11 +16,24 @@ import { AlertComponent } from '../../components/alert/alert.component';
   imports: [StoresTableComponent, AlertComponent]
 })
 export class StoresPage implements OnInit {
+  /** 
+   * Array que almacena las tiendas.
+   */
   stores: Store[] = [];
+  
+  /** 
+   * Estado de la petición HTTP ('init', 'loading', 'success', 'error').
+   */
   state: State = 'init';
 
+  /** 
+   * Servicio inyectado para la gestión de las tiendas.
+   */
   private storesService = inject(StoresService);
 
+  /**
+   * Método del ciclo de vida de Angular. Solicita todas las tiendas.
+   */
   ngOnInit(): void {
     this.state = 'loading';
     this.storesService.getAllStores().subscribe({

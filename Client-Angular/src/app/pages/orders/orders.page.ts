@@ -16,11 +16,24 @@ import { AlertComponent } from '../../components/alert/alert.component';
   imports: [OrdersTableComponent, AlertComponent]
 })
 export class OrdersPage implements OnInit {
+  /** 
+   * Array que guarda las órdenes consultadas en el servicio.
+   */
   orders: Order[] = [];
+  
+  /** 
+   * Estado de la petición HTTP ('init', 'loading', 'success', 'error').
+   */
   state: State = 'init';
 
+  /** 
+   * Inyección del servicio de órdenes de la API.
+   */
   private ordersService = inject(OrdersService);
 
+  /**
+   * Llama al servicio que provee el arreglo de todas las órdenes.
+   */
   ngOnInit(): void {
     this.state = 'loading';
     this.ordersService.getAllOrders().subscribe({

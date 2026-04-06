@@ -1,5 +1,8 @@
 import { Product } from "../interfaces/products.interface";
 
+/**
+ * Mocks de los productos simulando la respuesta del servicio.
+ */
 export const PRODUCTS_MOCK: Product[] = [
     {
         id: 1,

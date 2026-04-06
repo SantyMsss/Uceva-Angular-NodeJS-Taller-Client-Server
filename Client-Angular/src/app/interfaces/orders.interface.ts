@@ -1,3 +1,6 @@
+/**
+ * Tipo que representa los estados validos de una orden.
+ */
 export type OrderStatus = 'pending' | 'completed' | 'cancelled';
 
 /**
