@@ -71,4 +71,79 @@
  *           type: number
  *           example: 4500
  */
+
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Category:
+ *       type: object
+ *       description: Representa una categoría
+ *       required:
+ *         - id
+ *         - name
+ *         - description
+ *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
+ *         name:
+ *           type: string
+ *           example: "Ropa"
+ *         description:
+ *           type: string
+ *           example: "Todo tipo de ropa"
+ *     Store:
+ *       type: object
+ *       description: Representa una tienda
+ *       required:
+ *         - id
+ *         - name
+ *         - address
+ *         - city
+ *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
+ *         name:
+ *           type: string
+ *           example: "Tienda Central"
+ *         address:
+ *           type: string
+ *           example: "Calle 123"
+ *         city:
+ *           type: string
+ *           example: "Bogotá"
+ *     Order:
+ *       type: object
+ *       description: Representa un pedido
+ *       required:
+ *         - id
+ *         - userId
+ *         - totalAmount
+ *         - status
+ *         - orderDate
+ *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
+ *         userId:
+ *           type: number
+ *           example: 12
+ *         totalAmount:
+ *           type: number
+ *           example: 54000
+ *         status:
+ *           type: string
+ *           enum:
+ *             - pending
+ *             - completed
+ *             - cancelled
+ *           example: pending
+ *         orderDate:
+ *           type: string
+ *           format: date-time
+ *           example: "2023-11-20T10:00:00Z"
+ */
+
 export {};
