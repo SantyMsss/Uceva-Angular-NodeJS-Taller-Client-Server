@@ -7,7 +7,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "compodoc": "compodoc -p tsconfig.doc.json -d ../docs/compodoc --theme material"
+    "compodoc": "compodoc -p tsconfig.doc.json"
   },
   "prettier": {
     "printWidth": 100,
